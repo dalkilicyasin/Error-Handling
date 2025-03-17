@@ -14,7 +14,7 @@ class NetworkManager {
     private init(){}
     
     func apiCall<T: Decodable>(type: T.Type, completion: @escaping (Result<T, Error>) -> Void) throws {
-        // https://jsonplaceholder.typicode.com/users datayı görmek için URL içine kopyala-yapıştır
+        // https://jsonplaceholder.typicode.com/users data'yı görmek için URL içine kopyala-yapıştır
         guard let url = URL(string: "") else {
             throw NetworkError.invalidURL // burda yukardaki throws keywordünü kaldırıp direk completion block içersinde error handle edilebilir. fakat throw örneği için burda durması önemli. İlla throw kullanmaya gerek yok. fakat hatayı görmek için iyi bir seçim olabilir. komple stringi boş bırakıp deneyebilirsin.
         }
